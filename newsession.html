@@ -12,25 +12,41 @@
         rel="stylesheet">
 </head>
 <body>
+    <header>
+        <div class="header">
+            <header>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJb26fAz9y5rbhVh_OpiLCnhjFfesHHUMGQ&s"
+                    alt="Restore Hyper Wellness Logo">
+            </header>
+        </div>
+    </header>
     <main>
-        <div class="content">
-            <form>
+        <form class="content">
+            <div>
                 <label for="machine">Machine Type: </label>
                 <select id="machine" name="machine">
                     <option value="electric">Electric</option>
                     <option value="nitro">Nitrogen</option>
                 </select>
+            </div>
+            <div>
                 <label for="name">Client Name: </label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" placeholder="John Doe">
+            </div>
+            <div>
                 <label for="settings">Settings: </label>
                 <input type="text" name="settings" id="settings" placeholder="FS1/3:00">
+            </div>
+            <div>
                 <label for="starting">Starting Temperature: </label>
-                <input type="text" name="starting" id="starting">
+                <input type="text" name="starting" id="starting" placeholder="85.5">
+            </div>
+            <div>
                 <label for="ending">Ending Temperature: </label>
-                <input type="text" name="ending" id="ending">
-                <button type="submit">Submit</button>
+                <input type="text" name="ending" id="ending" placeholder="52.0">
+            </div>
+                <button class="submit-btn" type="submit">Submit</button>
             </form>
-        </div>
     </main>
 </body>
 </html>

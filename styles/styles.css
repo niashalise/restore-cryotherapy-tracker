@@ -13,12 +13,11 @@
     --text-primary: #fff;
 }
 
-.fa-xl {
+/* .fa-solid {
+    line-height: 1rem;
     font-size: 2.5em;
-    line-height: 1.04167em;
-    vertical-align: -.125em;
     color: #fff;
-}
+} */
 
 #hamburg:hover {
     cursor: pointer;
@@ -48,12 +47,66 @@ p {
     font-size: 1.5em;
 }
 
-#nav {
-    width: 350px;
-    height: auto;
-    background-color: var(--secondary-background);
-    display: none;
+/* Ham Menu */
+
+nav {
+    padding: 1rem;
+    display: flex;
+    background-color: var(--main-background);
 }
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.ham-menu {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    position: relative;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: var(--text-primary);
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+
+/* Ham menu when clicked */
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Homepage Buttons */
 
 main button {
     height: 100px;
@@ -71,7 +124,8 @@ main button {
 
 button:hover {
     background-color: var(--secondary-accent);
-    border: 3px solid var(--accent-blue)
+    border: 3px solid var(--accent-blue);
+    cursor: pointer;
 }
 
 .container {
@@ -87,9 +141,13 @@ table {
     border: var(--accent-blue) 3px solid;
     width: 70%;
     border-collapse: collapse;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
 }
 
-
+table tr:nth-child(even) {
+    background-color: lightgray;
+}
 
 table thead th {
     border: var(--accent-blue) 3px solid;
@@ -103,7 +161,9 @@ table td {
     text-align: center;
 }
 
-/* New Sessions */
+
+
+/* Form Styles */
 
 .content {
     width: 70%;
@@ -115,17 +175,17 @@ table td {
     justify-content: center;
 }
 
-.content form label {
+.content label {
     font-family: "Poppins", sans-serif;
     padding: 10px;
     margin: 10px;
 }
 
-.content form input {
-    padding: 5px;
+.content input {
+    margin: 10px;
 }
 
-.content form button {
+.content button {
     height: 50px;
     width: 150px;
     background-color: var(--secondary-background);
@@ -134,14 +194,29 @@ table td {
     overflow-y: hidden;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     color: var(--text-primary);
-    margin: 30px 0;
+    margin: auto;
     text-align: center;
     font-size: 1em;
 }
 
-.content form button:hover {
+.content button:hover {
     background-color: var(--main-background);
     color: var(--accent-blue);
+}
+
+.content div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.content div label {
+    flex: 1;
+    margin: 0 30px;
+}
+
+.content div select, input {
+    flex: 2;
 }
 
 /* Media Queries */
@@ -151,5 +226,9 @@ table td {
         height: 75px;
         width: 60%;
         font-size: 1em;
+    }
+
+    .content div {
+        flex-direction: column;
     }
 }
